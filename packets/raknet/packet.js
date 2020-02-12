@@ -23,6 +23,10 @@ class RaknetPacket {
 	decode(){}
 
 	encode(){}
+
+	getStream(){
+		return this.stream;
+	}
 }
 
 module.exports = RaknetPacket;
