@@ -40,7 +40,7 @@ class Socket {
 				reply2.decode();
 				bot.mtu = reply2.mtu;
 
-				let con = new ConnectionRequest(null);
+				let con = new ConnectionRequest();
 				con.clientId = bot.clientId;
 				con.sendPingTime = new Date().getTime();
 				con.useSecurity = true;
