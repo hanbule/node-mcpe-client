@@ -7,8 +7,8 @@ class ConnectionRequest extends Packet {
         return Packets.ID_CONNECTION_REQUEST;
     }
 
-    constructor(stream){
-        super(stream);
+    constructor(){
+        super();
         this.clientId = -1;
         this.sendPingTime = 0;
         this.useSecurity = false;
