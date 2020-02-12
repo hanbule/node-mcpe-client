@@ -3,7 +3,7 @@ const Packets = require("./packets");
 
 class ConnectionRequest extends Packet {
 
-    getId(){
+    static getId(){
         return Packets.ID_CONNECTION_REQUEST;
     }
 

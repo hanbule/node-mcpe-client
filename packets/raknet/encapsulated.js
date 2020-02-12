@@ -2,12 +2,12 @@ const Raknet = require("./infos");
 const Packets = require("./packets");
 const Packet = require("./packet");
 const BinaryStream = require("../../utils/binary");
-const PacketReliability = require("./PacketReliability");
+const PacketReliability = require("./reliability");
 
 class EncapsulatedPacket {
 
 	constructor(){
-		super(stream);
+		//super(stream); Why I do copy paste of other classes ?????
 		
 		this.reliability = 0;
         this.hasSplit = false;

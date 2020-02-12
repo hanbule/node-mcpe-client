@@ -3,7 +3,7 @@ const Packets = require("./packets");
 const OfflineMessage = require("./offline");
 const BinaryStream = require("../../utils/binary");
 
-class OpenConnectionReply2 extends OfflineMessage {
+class OpenConnectionReply1 extends OfflineMessage {
 
 	constructor(stream){
 		super(stream);
@@ -13,7 +13,7 @@ class OpenConnectionReply2 extends OfflineMessage {
 	}
 
 	static getId(){
-		return Packets.ID_OPEN_CONNECTION_REPLY_2;
+		return Packets.ID_OPEN_CONNECTION_REPLY_1;
 	}
 
 	decode(){
@@ -27,4 +27,4 @@ class OpenConnectionReply2 extends OfflineMessage {
 	}
 }
 
-module.exports = OpenConnectionReply2;
+module.exports = OpenConnectionReply1;

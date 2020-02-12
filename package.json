@@ -20,5 +20,8 @@
   "bugs": {
     "url": "https://github.com/Seyz123/node-mcpe-client/issues"
   },
-  "homepage": "https://github.com/Seyz123/node-mcpe-client#readme"
+  "homepage": "https://github.com/Seyz123/node-mcpe-client#readme",
+  "dependencies": {
+    "uuid": "^3.4.0"
+  }
 }

@@ -4,7 +4,7 @@ const BinaryStream = require("../../utils/binary");
 
 class RaknetPacket {
 
-	constructor(stream = null){
+	constructor(stream = null) {
 		if(stream instanceof BinaryStream){
 			this.stream = stream;
 		}
@@ -16,15 +16,23 @@ class RaknetPacket {
 		}
 	}
 
-	getId(){
+	static getId() {
 		return -1;
 	}
 
-	decode(){}
+	getId() {
+		return this.constructor.getId();
+	}
 
-	encode(){}
+	decode() {}
 
-	getStream(){
+	encode() {}
+
+	getBuffer() {
+		return this.stream.getBuffer();
+	}
+
+	getStream() {
 		return this.stream;
 	}
 }

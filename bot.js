@@ -1,13 +1,13 @@
-// ToDo
+const uuid = require("./utils/uuid");
 
 class Bot {
 
 	constructor(){
 		this.name = "";
-		this.mtu = null
 		this.clientId = 0;
 		this.xuid = "";
-		this.uuid = "";
+		// ToDo
+		//this.uuid = uuid.fromRandom();
 		this.entityRuntimeId = null;
 		this.entityUniqueId = null;
 	}

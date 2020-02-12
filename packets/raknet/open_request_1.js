@@ -1,25 +1,25 @@
 const Raknet = require("./infos");
 const Packets = require("./packets");
-const Packet = require("./packet");
+const OfflineMessage = require("./offline");
 const BinaryStream = require("../../utils/binary");
 
-class OpenConnectionRequest1 extends Packet {
+class OpenConnectionRequest1 extends OfflineMessage {
 
 	constructor(){
 		super();
 	}
 
-	getId(){
+	static getId(){
 		return Packets.ID_OPEN_CONNECTION_REQUEST_1;
 	}
 
 	encode(){
-		let magic = Buffer.from(Raknet.MAGIC, "binary");
 		let binary = this.stream;
 
 		binary.writeByte(this.getId());
-		binary.append(magic);
+		this.writeMagic();
 		binary.writeByte(Raknet.VERSION);
+		binary.writeShort(1447);
 	}
 }
 

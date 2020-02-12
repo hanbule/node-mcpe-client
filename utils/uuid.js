@@ -1,4 +1,6 @@
 const BinaryStream = require("./binary");
+const crypto = require("crypto");
+const uuid = require("uuid/v3");
 
 class UUID {
     initVars(){
@@ -28,12 +30,24 @@ class UUID {
     }
 
     static fromBinary(buffer, version){
+        console.log(buffer.length);
+
         if(buffer.length !== 16){
             throw new TypeError("UUID buffer must be exactly 16 bytes");
         }
         let stream = new BinaryStream(buffer);
 
         return new UUID(stream.readInt(), stream.readInt(), stream.readInt(), stream.readInt(), version);
+    }
+
+    static fromData(...data){
+        let hash = crypto.createHash("md5").update(data.join("")).digest("hex");
+
+        return this.fromBinary(hash, 3);
+    }
+
+    static fromRandom(){
+        return UUID.fromString(uuid(new Date().getTime().toString(), uuid.DNS), 3);
     }
 
     getPart(i){
