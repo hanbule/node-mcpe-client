@@ -43,7 +43,7 @@ class UUID {
     static fromData(...data){
         let hash = crypto.createHash("md5").update(data.join("")).digest("hex");
 
-        return this.fromBinary(hash, 3);
+        return UUID.fromBinary(hash, 3);
     }
 
     static fromRandom(){
